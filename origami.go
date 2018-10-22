@@ -264,14 +264,15 @@ func getPrinterData(ip string, search []string, toner *string, cartridge *string
 
     var block string
     for _, name := range search {
-        doc.Find(name).EachWithBreak(func(i int, s *goquery.Selection) bool {
+        doc.Find(name).EachWithBreak(func(i int, s *goquery.Selection) bool{
             block, _ = s.Html()
+            *toner = percentRegex.FindString(block) // parse the text to find the toner percent, and update toner
+            *cartridge = cartridgeRegex.FindString(block) // parse the text to find the cartridge type, and update cartridge
             return false
         })
     }
 
-    *toner = percentRegex.FindString(block) // parse the text to find the toner percent, and update toner
-    *cartridge = cartridgeRegex.FindString(block) // parse the text to find the cartridge type, and update cartridge
+
 }
 
 /*
