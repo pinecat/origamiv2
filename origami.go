@@ -103,7 +103,7 @@ var (
             <div id="heading">
                 <h1>Origami V2</h1>
                 <h4>By Rory Dudley (aka pinecat)</h4><br>
-                <h4><a href="https://www.github.com/pinecat/origamiv2" target="_blank">Github</a></h4>
+                <h4><a href="https://www.gitlab.com/pinecat/origamiv2" target="_blank">Gitlab</a></h4>
             </div>
 
             <div id="last">
