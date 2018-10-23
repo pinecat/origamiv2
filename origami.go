@@ -325,7 +325,7 @@ func main() {
     keys := sortMap(printers) // generate sorted string key slice of the printers map
     pd.Printers = make([]PrinterData, len(keys)) // initialize PrinterData array for our page data
     http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true} // tell http get requests to ignore bad ssl certs
-    percentRegex, _ = regexp.Compile(`\d\d%|\d%`) // regular expression for getting toner percents
+    percentRegex, _ = regexp.Compile(`\d\d\d%|\d\d%|\d%`) // regular expression for getting toner percents
     cartridgeRegex, _ = regexp.Compile(`[A-Z0-9]{6}`) // regular expression for getting cartridge type
     _ = interval
 
